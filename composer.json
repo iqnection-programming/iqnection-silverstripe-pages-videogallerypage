@@ -2,7 +2,7 @@
 	"name": "iqnection-pages/videogallerypage",
 	"description": "SilverStripe 3 Video Gallery Page",
 	"type": "silverstripe-module",
-	"keywords": ["iqnection"],
+	"keywords": ["iqnection","pages"],
 	"authors": [
 		{
 			"name": "IQnection",
