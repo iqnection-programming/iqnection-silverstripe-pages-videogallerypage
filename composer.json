@@ -1,0 +1,19 @@
+{
+	"name": "iqnection-pages/videogallerypage",
+	"description": "SilverStripe 3 Video Gallery Page",
+	"type": "silverstripe-module",
+	"keywords": ["iqnection"],
+	"authors": [
+		{
+			"name": "IQnection",
+            "homepage": "http://www.iqnection.com"
+		}
+	],
+	"require": {
+		"silverstripe/framework": ">=3.0",
+		"iqnection-pages/basepages":"*"
+	},
+	"extra": {
+		"installer-name": "iq-videogallerypage"
+	}
+}

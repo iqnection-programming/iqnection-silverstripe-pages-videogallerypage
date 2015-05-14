@@ -1,0 +1,9 @@
+#videos							{ list-style:none; margin:0; padding:0; }
+#videos:after					{ content:" "; display:block; height:0; clear:both; zoom:1; visibility:hidden; }
+#videos li						{ margin:2% 0 0 2%; padding:0; width:49%; float:left; }
+#videos li *					{ max-width:100%; }
+#videos li:nth-child(2n+1) 		{ margin-left:0; clear:both; }
+
+@media (max-width:549px){
+	#videos li					{ margin-left:0; width:100%; clear:both; }
+}
