@@ -36,6 +36,17 @@
 			return $code;
 		}
 		
+		public function EmbedURL()
+		{
+			preg_match('/(src="([^"]+)")/',$this->EmbedCode,$src);
+			return str_replace(array('"','src='),null,$src[0]);
+		}
+		
+		public function VideoThumbnailURL()
+		{
+			return $this->VideoThumbnail(false,'default');
+		}
+		
 		public function VideoThumbnail($img_tag=true, $size="small")
 		{
 			$html = "";
@@ -85,6 +96,8 @@
 	
 	class VideoGalleryPage extends Page
 	{
+		static $icon = "iq-videogallerypage/images/icon-videogallerypage";
+		
 		private static $has_many = array(
 			"Videos" => "Video"
 		);
