@@ -1,4 +1,4 @@
-<h1>$MenuTitle</h1>
+<h1>$Title</h1>
 $Content
 <ul id="videos">
     <% loop Videos %>
