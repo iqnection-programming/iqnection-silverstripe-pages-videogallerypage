@@ -117,7 +117,7 @@
 				new GridFieldDeleteAction(),
 				new GridFieldDetailForm()				
 			);
-			$fields->addFieldToTab('Root.Content.Videos', new GridField('Videos','Videos',$this->Videos(),$videos_config));
+			$fields->addFieldToTab('Root.Videos', new GridField('Videos','Videos',$this->Videos(),$videos_config));
 			return $fields;
 		}	
 	}
