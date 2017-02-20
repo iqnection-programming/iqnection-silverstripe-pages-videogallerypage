@@ -1,12 +1,13 @@
 <?php
 
+
 class Video extends DataObject
 {
 	private static $db = array(
-			"SortOrder" => "Int",
-			"Title" => "Varchar(255)",
-			"EmbedCode" => "Text"
-		);
+		"SortOrder" => "Int",
+		"Title" => "Varchar(255)",
+		"EmbedCode" => "Text"
+	);
 	
 	private static $default_sort = "SortOrder";
 	
@@ -19,7 +20,7 @@ class Video extends DataObject
 	);
 
 	public function getCMSFields()
-	{
+	{	
 		$fields = parent::getCMSFields();
 		$fields->push( new HiddenField('SortOrder',null,$fields->dataFieldByName('SortOrder')->Value()) );
 		$fields->dataFieldByName('Title')->setTitle('Video Title');	
@@ -109,19 +110,14 @@ class VideoGalleryPage extends Page
 	public function getCMSFields()
 	{
 		$fields = parent::getCMSFields();
-		$videos_config = GridFieldConfig::create()->addComponents(				
-			new GridFieldSortableRows('SortOrder'),
-			new GridFieldToolbarHeader(),
-			new GridFieldAddNewButton('toolbar-header-right'),
-			new GridFieldSortableHeader(),
-			new GridFieldDataColumns(),
-			new GridFieldPaginator(10),
-			new GridFieldEditButton(),
-			new GridFieldDeleteAction(),
-			new GridFieldDetailForm()				
-		);
-		$fields->addFieldToTab('Root.Videos', new GridField('Videos','Videos',$this->Videos(),$videos_config));
-		$this->extend('updateCMSFields',$fields);
+		$fields->addFieldToTab('Root.Videos', GridField::create(
+			'Videos',
+			'Videos',
+			$this->Videos(),
+			GridFieldConfig_RecordEditor::create()->addComponent(
+				new GridFieldSortableRows('SortOrder')
+			)
+		));
 		return $fields;
 	}	
 }
@@ -133,3 +129,5 @@ class VideoGalleryPage_Controller extends Page_Controller
 		parent::init();
 	}	
 }
+
+
