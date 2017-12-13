@@ -1,10 +1,10 @@
 <h1>$Title</h1>
 $Content
+
 <ul id="videos">
-    <% loop Videos %>
+    <% loop $Videos %>
         <li>
-            <h5>$Title</h5>
-            $EmbedCodeSafe
+            <% include VideoGalleryVideo %>
         </li>
     <% end_loop %>
 </ul><!--videos-->

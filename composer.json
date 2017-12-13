@@ -1,6 +1,6 @@
 {
 	"name": "iqnection-pages/videogallerypage",
-	"description": "SilverStripe 3 Video Gallery Page",
+	"description": "SilverStripe Video Gallery Page",
 	"type": "silverstripe-module",
 	"keywords": ["iqnection","pages"],
 	"authors": [
@@ -10,7 +10,8 @@
 		}
 	],
 	"require": {
-		"silverstripe/framework": ">=3.0",
+		"silverstripe/framework": "4.*",
+		"undefinedoffset/sortablegridfield": "*",
 		"iqnection-pages/basepages":"*"
 	},
 	"extra": {
