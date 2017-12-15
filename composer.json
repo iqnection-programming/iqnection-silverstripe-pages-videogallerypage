@@ -3,6 +3,7 @@
 	"description": "SilverStripe Video Gallery Page",
 	"type": "silverstripe-module",
 	"keywords": ["iqnection","pages"],
+	"license": "BSD-3-Clause",
 	"authors": [
 		{
 			"name": "IQnection",
@@ -10,9 +11,9 @@
 		}
 	],
 	"require": {
-		"silverstripe/framework": "4.*",
+		"silverstripe/framework": "^4.0",
 		"undefinedoffset/sortablegridfield": "*",
-		"iqnection-pages/basepages":"*"
+		"iqnection-pages/basepages":"^2.0"
 	},
 	"extra": {
 		"installer-name": "iq-videogallerypage"
