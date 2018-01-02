@@ -2,6 +2,9 @@
 # Change Log
 
 
+## [2.0.1]
+- Added better YouTube video image retrieval
+
 ## [2.0.0]
 - updated for SilverStripe 4
 - now incorporates YouTube's API for dynamic updating

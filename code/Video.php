@@ -247,12 +247,34 @@ class Video extends ORM\DataObject
 		return $data;
 	}
 	
+	public function YouTubeThumbnailURL($resolution = 'standard')
+	{
+		$resolutions = [
+			'default',
+			'medium',
+			'high',
+			'standard',
+			'maxres'
+		];
+		if (!$YouTubeData = $this->YouTubeData())
+		{
+			return false;
+		}
+		if ( (!isset($YouTubeData->snippet->thumbnails->{$resolution}->url)) || (!$url = $YouTubeData->snippet->thumbnails->{$resolution}->url) )
+		{
+			$key = array_search($resolution,$resolutions);
+			return $this->YouTubeThumbnailURL($resolutions[$key-1]);
+		}
+		$this->extend('updateYouTubeThumbnailURL',$url);
+		return $url;
+	}
+	
 	public function CMSThumbnail()
 	{
 		$thumb = false;
 		if ($data = $this->YouTubeData())
 		{
-			$thumb = ORM\FieldType\DBField::create_field('HTMLText','<img src="'.$data->snippet->thumbnails->medium->url.'" />');
+			$thumb = ORM\FieldType\DBField::create_field('HTMLText','<img src="'.$this->YouTubeThumbnailURL('medium').'" />');
 		}
 		$this->extend('updateCMSThumbnail',$thumb);
 		return $thumb;
