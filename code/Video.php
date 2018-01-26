@@ -79,8 +79,8 @@ class Video extends ORM\DataObject
         $fields = parent::getBetterButtonsActions();
 		if ( ($this->isYouTube()) && (class_exists('UncleCheese\BetterButtons\Actions\BetterButtonCustomAction')) )
 		{
-	        $fields->push($button = \UncleCheese\BetterButtons\Actions\BetterButtonCustomAction::create('importFromYouTube', 'Import From YouTube'));
-			$button->removeExtraClass('readonly');
+//	        $fields->push($button = \UncleCheese\BetterButtons\Actions\BetterButtonCustomAction::create('importFromYouTube', 'Import From YouTube'));
+//			$button->removeExtraClass('readonly');
 		}
 		$this->extend('updateBetterButtonsActions',$fields);
         return $fields;

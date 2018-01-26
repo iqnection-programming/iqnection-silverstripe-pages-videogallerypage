@@ -2,6 +2,9 @@
 # Change Log
 
 
+## [2.0.2]
+- BetterButtons custom buttons still has bugs. I'm removing the custom button for now
+
 ## [2.0.1]
 - Added better YouTube video image retrieval
 
