@@ -2,6 +2,9 @@
 # Change Log
 
 
+## [2.1.0]
+- added $table_name var to Video class
+
 ## [2.0.2]
 - BetterButtons custom buttons still has bugs. I'm removing the custom button for now
 

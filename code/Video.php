@@ -9,6 +9,8 @@ use SilverStripe\SiteConfig\SiteConfig;
 
 class Video extends ORM\DataObject
 {
+	private static $table_name = 'Video';
+	
 	private static $youtube_api_collection = [
 		'snippet',
 		'player'
