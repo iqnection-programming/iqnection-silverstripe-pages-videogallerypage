@@ -1,6 +1,8 @@
 ## Package: iqnection-silverstripe-pages-videogallerypage
 # Change Log
 
+## [2.1.1]
+- updated to follow SS 4.1 /public/ directory structure
 
 ## [2.1.0]
 - added $table_name var to Video class

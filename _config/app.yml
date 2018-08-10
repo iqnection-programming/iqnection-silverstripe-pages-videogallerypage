@@ -1,3 +1,6 @@
+---
+Name: iqvideogallery
+---
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
-    - VideoGallerySiteConfigExtension
+    - IQnection\VideoGallery\SiteConfig\SiteConfigExtension

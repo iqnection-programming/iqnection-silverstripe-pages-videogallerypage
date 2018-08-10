@@ -1,15 +1,18 @@
 <?php
 
+namespace IQnection\VideoGallery;
 
 use SilverStripe\Forms;
 use UndefinedOffset\SortableGridField\Forms\GridFieldSortableRows;
 
-class VideoGalleryPage extends Page
+class VideoGalleryPage extends \Page
 {
-	private static $icon = "iq-videogallerypage/images/icon-videogallerypage-file.gif";
+	private static $table_name = 'VideoGalleryPage';
+	
+	private static $icon = "resources/iqnection-pages/videogallerypage/images/icon-videogallerypage-file.gif";
 	
 	private static $has_many = [
-		"Videos" => IQnection\VideoGallery\Video::class
+		"Videos" => IQnection\VideoGallery\Model\Video::class
 	];
 	
 	public function getCMSFields()

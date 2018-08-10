@@ -1,9 +1,11 @@
 <?php
 
+namespace IQnection\VideoGallery\SiteConfig;
+
 use SilverStripe\ORM;
 use SilverStripe\Forms;
 
-class VideoGallerySiteConfigExtension extends ORM\DataExtension
+class SiteConfigExtension extends ORM\DataExtension
 {
 	private static $db = array(
 		'VideoGallery_YouTubeApiKey' => 'Varchar(50)'

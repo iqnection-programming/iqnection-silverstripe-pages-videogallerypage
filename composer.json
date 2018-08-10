@@ -16,6 +16,16 @@
 		"iqnection-pages/basepages":"^2.0"
 	},
 	"extra": {
-		"installer-name": "iq-videogallerypage"
+		"expose": [
+			"css",
+			"fancybox3",
+			"images",
+			"javascript"
+		]
+	},
+	"autoload": {
+		"psr-4": {
+			"IQnection\\VideoGallery\\": "app/src/"
+		}
 	}
 }

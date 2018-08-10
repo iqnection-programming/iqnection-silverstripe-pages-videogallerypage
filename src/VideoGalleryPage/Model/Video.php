@@ -1,6 +1,6 @@
 <?php
 
-namespace IQnection\VideoGallery;
+namespace IQnection\VideoGallery\Model;
 
 use SilverStripe\ORM;
 use SilverStripe\Forms;
