@@ -9,10 +9,10 @@ class VideoGalleryPage extends \Page
 {
 	private static $table_name = 'VideoGalleryPage';
 	
-	private static $icon = "resources/iqnection-pages/videogallerypage/images/icon-videogallerypage-file.gif";
+	private static $icon = "iqnection-pages/videogallerypage:images/icon-videogallerypage-file.gif";
 	
 	private static $has_many = [
-		"Videos" => IQnection\VideoGallery\Model\Video::class
+		"Videos" => Model\Video::class
 	];
 	
 	public function getCMSFields()
