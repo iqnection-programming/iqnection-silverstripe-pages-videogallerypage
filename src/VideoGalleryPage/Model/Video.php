@@ -44,6 +44,8 @@ class Video extends ORM\DataObject
 	public function getCMSFields()
 	{	
 		$fields = parent::getCMSFields();
+		$fields->removeByName('LinkTracking');
+		$fields->removeByName('FileTracking');
 		$fields->push( Forms\HiddenField::create('SortOrder',null,$fields->dataFieldByName('SortOrder')->Value()) );
 		$fields->dataFieldByName('Title')->setTitle('Video Title');
 		$fields->insertBefore('Title', $fields->dataFieldByName('YouTubeLink')
@@ -75,19 +77,7 @@ class Video extends ORM\DataObject
 		$this->extend('updateCMSFields',$fields);
 		return $fields;
 	}
-	
-	public function getBetterButtonsActions() 
-	{
-        $fields = parent::getBetterButtonsActions();
-		if ( ($this->isYouTube()) && (class_exists('UncleCheese\BetterButtons\Actions\BetterButtonCustomAction')) )
-		{
-//	        $fields->push($button = \UncleCheese\BetterButtons\Actions\BetterButtonCustomAction::create('importFromYouTube', 'Import From YouTube'));
-//			$button->removeExtraClass('readonly');
-		}
-		$this->extend('updateBetterButtonsActions',$fields);
-        return $fields;
-    }
-	
+		
 	public function canCreate($member = null,$context = array()) { return true; }
 	public function canDelete($member = null,$context = array()) { return true; }
 	public function canEdit($member = null,$context = array())   { return true; }
@@ -219,7 +209,7 @@ class Video extends ORM\DataObject
 				{
 					return current($matches);
 				}
-				if (preg_match('/(?<=\/)([a-zA-Z0-9]+$)|(([a-zA-Z0-9]+)(?=\?))/',$this->YouTubeLink,$matches))
+				if (preg_match('/(?<=\/)([a-zA-Z0-9_-]+$)|(([a-zA-Z0-9_-]+)(?=\?))/',$this->YouTubeLink,$matches))
 				{
 					return current($matches);
 				}
