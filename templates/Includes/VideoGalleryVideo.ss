@@ -7,5 +7,5 @@
 		$Description
 	</div>
 <% else %>
-	$EmbedCodeSafe
+	$EmbedCodeSafe.RAW
 <% end_if %>
