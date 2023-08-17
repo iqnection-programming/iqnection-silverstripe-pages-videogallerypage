@@ -11,7 +11,7 @@
 		}
 	],
 	"require": {
-		"silverstripe/framework": "^4.0",
+		"silverstripe/framework": "^5.0",
 		"undefinedoffset/sortablegridfield": "*",
 		"iqnection-pages/basepages":"^2.0"
 	},
