@@ -70,9 +70,11 @@ class Video extends ORM\DataObject
 			->addExtraClass('monotype');
 		$fields->addFieldToTab('Root.Main', Forms\HTMLEditor\HTMLEditorField::create('Description','Description') );
 		$fields->removeByName('YouTubeData_JSON');
-		if ($ytData = json_decode($this->owner->YouTubeData_JSON,1))
-		{
-			$fields->addFieldToTab('Root.YouTubeData', Forms\LiteralField::create('ytData','<div><pre><xmp>'.print_r($ytData,1).'</xmp></pre></div>') );
+		if($this->owner->YouTubeData_JSON) {
+			if ($ytData = json_decode($this->owner->YouTubeData_JSON,1))
+			{
+				$fields->addFieldToTab('Root.YouTubeData', Forms\LiteralField::create('ytData','<div><pre><xmp>'.print_r($ytData,1).'</xmp></pre></div>') );
+			}
 		}
 		$this->extend('updateCMSFields',$fields);
 		return $fields;
